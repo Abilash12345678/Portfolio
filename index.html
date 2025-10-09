@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abilash | Portfolio</title>
+  <link rel="stylesheet" href="css.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="#home" class="logo"><span>Abi</span>lash</a>
+    <nav class="navbar">
+      <a href="#home" class="active">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+    </nav>
+    <!-- <a href="#contactID" class="contact">Contact</a> -->
+    <div class="header-buttons">
+    <a href="ABILASH (Resume).pdf" download="Abilash-Resume.pdf" class="resume-btn">Resume</a>
+    <a href="#contactID" class="contact">Contact</a>
+  </div>
+  </header>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Hi 👋</h3>
+      <h1>I'm <span>Abilash</span><br>Full-Stack Developer</h1>
+      <p>Passionate about building interactive, responsive web applications using React.js, Java, and PostgreSQL. Always eager to learn and grow as a developer.</p>
+      <div class="btn-box">
+        <a href="#contactID" class="btn1">Hire Me</a>
+        <a href="#skills" class="btn2">Skills</a>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="mypic (1).jpg" alt="Abilash - Full-Stack Developer">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <h3>Full-Stack <span>Developer</span></h3>
+      <p>I am B.E graduated in Computer Science and Engineering at Muthayammal Engineering College, Namakkal. I specialize in Full-Stack development with React.js and enjoy creating user-friendly applications.</p>
+      <!-- <a href="#experience" class="btn2">Experience</a> -->
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2 class="section-heading">My <span>Skills</span></h2>
+    <div class="skills-container">
+      <div class="skill-box">
+        <h3>Frontend Development</h3>
+        <p>HTML5, CSS3, JavaScript, React.js, Bootstrap, Material UI</p>
+      </div>
+      <div class="skill-box">
+        <h3>Backend Development</h3>
+        <p>Java, Spring Boot, REST APIs</p>
+      </div>
+      <div class="skill-box">
+        <h3>Databases</h3>
+        <p>PostgreSQL, MySQL</p>
+      </div>
+      <div class="skill-box">
+        <h3>Version Control</h3>
+        <p>Git, GitHub</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h2 class="section-heading">My <span>Projects</span></h2>
+    <div class="projects-container">
+      <div class="project-box">
+        <h3>CampusConnect</h3>
+        <p>A student management system connecting campus resources with users.</p>
+      </div>
+      <div class="project-box">
+        <h3>Personal Portfolio</h3>
+        <p>A website showcasing projects, skills, and experience with modern UI designs.</p>
+      </div>
+      <!-- <div class="project-box">
+        <h3>Task Manager App</h3>
+        <p>An app to organize daily tasks with deadlines and priorities.</p>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <h2 class="section-heading">My <span>Education</span></h2>
+    <div class="education-container">
+      <div class="education-box">
+        <h3>B.E in Computer Science</h3>
+        <p>Muthayammal Engineering College, Namakkal.</p>
+        <p>CGPA : 8.02</p>
+        <span>2021 – 2025</span>
+      </div>
+      <div class="education-box">
+        <h3>Higher Secondary School</h3>
+        <p>Vengateswara Higher Secondary School,Salem.</p>
+        <p>Percentage : 86.6%</p>
+        <span>2019 – 2021</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  
+<!-- ================== CONTACT SECTION ================== -->
+
+<!-- ================== CONTACT SECTION ================== -->
+<section class="contact-form" id="contactID">
+  <h2 class="contact-me">Contact <span>Me</span></h2>
+
+  <!-- Contact Form -->
+  <form id="contact-form">
+    <div class="input-box">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+    </div>
+
+    <div class="input-box">
+      <input type="text" name="title" placeholder="Subject" required>
+    </div>
+
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <button type="submit" class="btn1">Send Message</button>
+  </form>
+</section>
+
+<!-- ================== EMAILJS SCRIPT ================== -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  (function() {
+    // ✅ Initialize EmailJS with your public key
+    emailjs.init({
+      publicKey: "SDVpFAVgP1qY2vDy3" // Replace with your actual public key if different
+    });
+  })();
+
+  // ✅ Wait until DOM is ready
+  window.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // ✅ Send form using EmailJS
+      emailjs.sendForm("service_imyqadf", "template_7o5v9ei", this)
+        .then(() => {
+          alert("✅ Message sent successfully!");
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("❌ Failed to send message:", error);
+          alert("❌ Failed to send message. Please try again later.");
+        });
+    });
+  });
+</script>
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social">
+      <a href="https://www.linkedin.com/in/abilash-m-b330aa248" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+      <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+      <a href="#" target="_blank"><i class='bx bxl-github'></i></a>
+    </div>
+    <p>© 2025 Abilash | All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
